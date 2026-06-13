@@ -1,11 +1,11 @@
-/* ============================================
-   RESET
-   ============================================ */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 :root {
@@ -22,7 +22,6 @@
 
     --border: #1F2937;
 
-    --spacing-xs: 0.5rem;
     --spacing-sm: 0.75rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
@@ -32,14 +31,10 @@
 
     --font-base: 'Inter', sans-serif;
 
-    --radius-md: 10px;
+    --radius-md: 12px;
 
     --transition: all 0.25s ease;
 }
-
-/* ============================================
-   GLOBAL
-   ============================================ */
 
 html {
     scroll-behavior: smooth;
@@ -52,9 +47,9 @@ body {
     line-height: 1.6;
 }
 
-/* ============================================
+/* =========================
    CONTAINER
-   ============================================ */
+   ========================= */
 
 .container {
     max-width: 1180px;
@@ -66,9 +61,9 @@ section {
     padding: var(--spacing-3xl) 0;
 }
 
-/* ============================================
+/* =========================
    SECTION HEADER (CENTER FIXED)
-   ============================================ */
+   ========================= */
 
 .section-header {
     text-align: center;
@@ -76,19 +71,19 @@ section {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .section-header p {
-    max-width: 520px;
+    max-width: 600px;
     margin: 0 auto;
     color: var(--text-secondary);
 }
 
-/* ============================================
-   NAVBAR
-   ============================================ */
+/* =========================
+   NAVBAR + UNDERLINE FIX
+   ========================= */
 
 .navbar {
     position: fixed;
@@ -113,16 +108,12 @@ section {
     list-style: none;
 }
 
-/* ============================================
-   ✅ FIXED MODERN UNDERLINE ANIMATION
-   ============================================ */
-
 .nav-link {
     position: relative;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    padding-bottom: 5px;
-    transition: color 0.25s ease;
+    text-decoration: none !important;
+    padding-bottom: 4px;
 }
 
 .nav-link::after {
@@ -147,9 +138,9 @@ section {
     transform: scaleX(1);
 }
 
-/* ============================================
+/* =========================
    HERO
-   ============================================ */
+   ========================= */
 
 .hero {
     min-height: 100vh;
@@ -162,7 +153,7 @@ section {
 }
 
 .hero-title {
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -172,9 +163,9 @@ section {
     margin-bottom: var(--spacing-xl);
 }
 
-/* ============================================
+/* =========================
    BUTTON
-   ============================================ */
+   ========================= */
 
 .btn {
     padding: 0.9rem 2rem;
@@ -195,26 +186,29 @@ section {
     transform: translateY(-2px);
 }
 
-/* ============================================
-   SERVICES (FIXED FEEL)
-   ============================================ */
+/* =========================
+   SERVICES (🔥 FIXED PROPERLY)
+   ========================= */
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
+/* 🔥 THIS IS THE IMPORTANT FIX */
 .service-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    padding: 2.4rem;
     border-radius: var(--radius-md);
+
+    padding: 2.5rem 2.2rem;
 
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 1rem;
 
+    min-height: 190px; /* keeps all cards balanced */
     transition: var(--transition);
 }
 
@@ -225,9 +219,9 @@ section {
     box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* ============================================
+/* =========================
    HOW IT WORKS
-   ============================================ */
+   ========================= */
 
 .steps-grid {
     display: grid;
@@ -243,16 +237,9 @@ section {
     text-align: center;
 }
 
-.step-number {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--accent);
-    margin-bottom: 1rem;
-}
-
-/* ============================================
+/* =========================
    WHY US
-   ============================================ */
+   ========================= */
 
 .benefits-grid {
     display: grid;
@@ -268,9 +255,9 @@ section {
     text-align: center;
 }
 
-/* ============================================
-   CONTACT (FIXED SPACING PROPERLY)
-   ============================================ */
+/* =========================
+   CONTACT (FIXED SPACING)
+   ========================= */
 
 .contact-wrapper {
     display: grid;
@@ -284,19 +271,13 @@ section {
     gap: 1.4rem;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
 input, textarea {
     width: 100%;
-    padding: 1rem 1.1rem;
+    padding: 1rem;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     color: var(--text-primary);
-    font-size: 1rem;
 }
 
 input:focus, textarea:focus {
@@ -304,9 +285,9 @@ input:focus, textarea:focus {
     border-color: var(--accent);
 }
 
-/* ============================================
+/* =========================
    FOOTER
-   ============================================ */
+   ========================= */
 
 .footer {
     text-align: center;
@@ -315,9 +296,9 @@ input:focus, textarea:focus {
     background: var(--bg-secondary);
 }
 
-/* ============================================
+/* =========================
    RESPONSIVE
-   ============================================ */
+   ========================= */
 
 @media (max-width: 768px) {
 
