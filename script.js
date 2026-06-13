@@ -1,73 +1,130 @@
-// Smooth scroll navigation
+// ============================================
+// SMOOTH SCROLL (FIXED + CLEAN)
+// ============================================
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const targetId = this.getAttribute('href');
+
+        if (targetId && targetId !== "#") {
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                e.preventDefault();
+                const offsetTop = target.offsetTop - 80;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
 
-// Form submission
+
+// ============================================
+// FORM SUBMISSION (NOW REAL EMAIL FLOW)
+// ============================================
+
 const contactForm = document.getElementById('contactForm');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && subject && message) {
-            alert(`Thank you, ${name}! We've received your message and will get back to you soon.`);
-            this.reset();
+
+        const submitBtn = this.querySelector("button[type='submit']");
+        const originalText = submitBtn.textContent;
+
+        // Get values
+        const formData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            subject: document.getElementById('subject').value.trim(),
+            message: document.getElementById('message').value.trim(),
+        };
+
+        if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+            alert("Please fill all fields.");
+            return;
         }
+
+        try {
+            // UI loading state
+            submitBtn.textContent = "Sending...";
+            submitBtn.disabled = true;
+
+            // 🔥 IMPORTANT: Replace this with your Formspree URL
+            const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    _replyto: formData.email
+                })
+            });
+
+            if (response.ok) {
+                alert(`Thank you ${formData.name}! Your message has been sent.`);
+                this.reset();
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+
+        } catch (error) {
+            console.error(error);
+            alert("Network error. Please try again.");
+        }
+
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
     });
 }
 
-// Navbar background on scroll
+
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
+
 const navbar = document.querySelector('.navbar');
-let lastScrollTop = 0;
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > 50) {
         navbar.style.background = 'rgba(11, 15, 20, 0.95)';
-        navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
     } else {
-        navbar.style.background = 'rgba(11, 15, 20, 0.8)';
+        navbar.style.background = 'rgba(11, 15, 20, 0.85)';
         navbar.style.boxShadow = 'none';
     }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
 
-const observer = new IntersectionObserver(function(entries) {
+// ============================================
+// SIMPLE SCROLL ANIMATIONS (CLEAN VERSION)
+// ============================================
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1
+});
 
-// Observe cards on page load
 document.querySelectorAll('.service-card, .benefit, .step').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(10px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.opacity = "0";
+    el.style.transform = "translateY(15px)";
+    el.style.transition = "0.6s ease";
     observer.observe(el);
 });
