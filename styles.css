@@ -138,6 +138,15 @@ section {
     transform: scaleX(1);
 }
 
+.brand-text {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.brand-logo {
+    height: 36px;
+}
+
 /* =========================
    HERO
    ========================= */
