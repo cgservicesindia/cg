@@ -236,7 +236,12 @@
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <p>&copy; 2025 CG Services</p>
+        <p>&copy; <span id="year"></span> CG Services</p>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+        
     </div>
 </footer>
 
