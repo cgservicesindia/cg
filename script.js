@@ -95,14 +95,10 @@ if (contactForm) {
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > 50) {
-        navbar.style.background = 'rgba(11, 15, 20, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(11, 15, 20, 0.85)';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
 });
 
