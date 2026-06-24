@@ -8,19 +8,24 @@ a {
     text-decoration: none !important;
 }
 
-:root {
-    --bg-primary: #fff;
-    --bg-secondary: #111318;
-    --bg-tertiary: #16191F;
+/* =========================
+   LIGHT THEME
+========================= */
 
-    --text-primary: #FFFFFF;
-    --text-secondary: #B8BDC7;
-    --text-tertiary: #7A7F8A;
+:root {
+
+    --bg-primary: #FAF8F4;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F5F1E8;
+
+    --text-primary: #1E1E1E;
+    --text-secondary: #5E5E5E;
+    --text-tertiary: #8A8A8A;
 
     --accent: #ba9653;
-    --accent-hover: #133152;
+    --accent-hover: #9c7c40;
 
-    --border: #ba9653;
+    --border: rgba(186, 150, 83, 0.25);
 
     --spacing-sm: 0.75rem;
     --spacing-md: 1rem;
@@ -49,7 +54,7 @@ body {
 
 /* =========================
    CONTAINER
-   ========================= */
+========================= */
 
 .container {
     max-width: 1180px;
@@ -62,8 +67,8 @@ section {
 }
 
 /* =========================
-   SECTION HEADER (CENTER FIXED)
-   ========================= */
+   SECTION HEADER
+========================= */
 
 .section-header {
     text-align: center;
@@ -82,17 +87,22 @@ section {
 }
 
 /* =========================
-   NAVBAR + UNDERLINE FIX
-   ========================= */
+   NAVBAR
+========================= */
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(11, 15, 20, 0.85);
+
+    background: rgba(255, 255, 255, 0.85);
+
     backdrop-filter: blur(10px);
+
     border-bottom: 1px solid var(--border);
+
     z-index: 1000;
+
     padding: 1rem 0;
 }
 
@@ -110,23 +120,33 @@ section {
 
 .nav-link {
     position: relative;
+
     color: var(--text-secondary);
+
     font-size: 0.9rem;
-    text-decoration: none !important;
+
     padding-bottom: 4px;
 }
 
 .nav-link::after {
     content: "";
+
     position: absolute;
+
     left: 0;
+
     bottom: 0;
+
     width: 100%;
+
     height: 2px;
+
     background: var(--accent);
 
     transform: scaleX(0);
+
     transform-origin: left;
+
     transition: transform 0.3s ease;
 }
 
@@ -140,7 +160,8 @@ section {
 
 .brand-text {
     font-weight: 700;
-    color: var(--primary);
+
+    color: var(--accent);
 }
 
 .brand-logo {
@@ -149,165 +170,267 @@ section {
 
 /* =========================
    HERO
-   ========================= */
+========================= */
 
 .hero {
+
     min-height: 100vh;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     padding-top: 8rem;
-    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+
+    background:
+        linear-gradient(
+            135deg,
+            #FAF8F4,
+            #F3EDE1
+        );
 }
 
 .hero-title {
+
     font-size: 3rem;
+
     margin-bottom: var(--spacing-lg);
 }
 
 .hero-subtitle {
+
     font-size: 1.1rem;
+
     color: var(--text-secondary);
+
     margin-bottom: var(--spacing-xl);
 }
 
 /* =========================
    BUTTON
-   ========================= */
+========================= */
 
 .btn {
+
     padding: 0.9rem 2rem;
+
     border-radius: var(--radius-md);
+
     border: none;
+
     cursor: pointer;
+
     font-weight: 600;
+
     transition: var(--transition);
 }
 
 .btn-primary {
+
     background: var(--accent);
-    color: white;
+
+    color: #111;
 }
 
 .btn-primary:hover {
+
     background: var(--accent-hover);
+
     transform: translateY(-2px);
 }
 
 /* =========================
-   SERVICES (🔥 FIXED PROPERLY)
-   ========================= */
+   SERVICES
+========================= */
 
 .services-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
     gap: 2rem;
 }
 
-/* 🔥 THIS IS THE IMPORTANT FIX */
 .service-card {
+
     background: var(--bg-secondary);
+
     border: 1px solid var(--border);
+
     border-radius: var(--radius-md);
 
     padding: 2.5rem 2.2rem;
 
     display: flex;
+
     flex-direction: column;
+
     gap: 1rem;
 
-    min-height: 190px; /* keeps all cards balanced */
+    min-height: 190px;
+
     transition: var(--transition);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.04);
 }
 
 .service-card:hover {
+
     transform: translateY(-6px);
+
     border-color: var(--accent);
+
     background: var(--bg-tertiary);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+
+    box-shadow:
+        0 14px 34px
+        rgba(0,0,0,0.08);
 }
 
 /* =========================
    HOW IT WORKS
-   ========================= */
+========================= */
 
 .steps-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 1.5rem;
 }
 
 .step {
+
     background: var(--bg-secondary);
+
     border: 1px solid var(--border);
+
     padding: 2rem;
+
     border-radius: var(--radius-md);
+
     text-align: center;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.04);
 }
 
 /* =========================
    WHY US
-   ========================= */
+========================= */
 
 .benefits-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
     gap: 1.5rem;
 }
 
 .benefit {
+
     background: var(--bg-secondary);
+
     border: 1px solid var(--border);
+
     padding: 2rem;
+
     border-radius: var(--radius-md);
+
     text-align: center;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.04);
 }
 
 /* =========================
-   CONTACT (FIXED SPACING)
-   ========================= */
+   CONTACT
+========================= */
 
 .contact-wrapper {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 3rem;
 }
 
 .contact-form {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 1.4rem;
 }
 
-input, textarea {
+input,
+textarea {
+
     width: 100%;
+
     padding: 1rem;
-    background: var(--bg-secondary);
+
+    background: #FFFFFF;
+
     border: 1px solid var(--border);
+
     border-radius: var(--radius-md);
+
     color: var(--text-primary);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
+
     outline: none;
+
     border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(186,150,83,.12);
 }
 
 /* =========================
    FOOTER
-   ========================= */
+========================= */
 
 .footer {
+
     text-align: center;
+
     padding: 2rem 0;
+
     border-top: 1px solid var(--border);
-    background: var(--bg-secondary);
+
+    background: #FFFFFF;
 }
 
 /* =========================
    RESPONSIVE
-   ========================= */
+========================= */
 
 @media (max-width: 768px) {
 
@@ -326,4 +449,5 @@ input:focus, textarea:focus {
     .hero-title {
         font-size: 2.2rem;
     }
+
 }
