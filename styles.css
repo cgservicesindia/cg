@@ -8,11 +8,9 @@ a {
     text-decoration: none !important;
 }
 
-/* =========================
-   LIGHT THEME
-========================= */
-
 :root {
+
+    /* LIGHT THEME */
 
     --bg-primary: #FAF8F4;
     --bg-secondary: #FFFFFF;
@@ -38,7 +36,7 @@ a {
 
     --radius-md: 12px;
 
-    --transition: all 0.25s ease;
+    --transition: all .25s ease;
 }
 
 html {
@@ -87,17 +85,19 @@ section {
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR (UPDATED)
 ========================= */
 
 .navbar {
     position: fixed;
+
     top: 0;
+
     width: 100%;
 
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255,255,255,.96);
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
     border-bottom: 1px solid var(--border);
 
@@ -108,27 +108,37 @@ section {
 
 .navbar .container {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 .nav-menu {
     display: flex;
+
     gap: 2rem;
+
     list-style: none;
 }
 
 .nav-link {
+
     position: relative;
 
-    color: var(--text-secondary);
+    color: #2A2A2A;
 
-    font-size: 0.9rem;
+    font-size: .95rem;
+
+    font-weight: 600;
 
     padding-bottom: 4px;
+
+    transition: var(--transition);
 }
 
 .nav-link::after {
+
     content: "";
 
     position: absolute;
@@ -147,18 +157,21 @@ section {
 
     transform-origin: left;
 
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
 }
 
 .nav-link:hover {
-    color: var(--text-primary);
+
+    color: var(--accent);
 }
 
 .nav-link:hover::after {
+
     transform: scaleX(1);
 }
 
 .brand-text {
+
     font-weight: 700;
 
     color: var(--accent);
@@ -216,7 +229,7 @@ section {
 
 .btn {
 
-    padding: 0.9rem 2rem;
+    padding: .9rem 2rem;
 
     border-radius: var(--radius-md);
 
@@ -254,7 +267,7 @@ section {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(280px, 1fr)
+            minmax(280px,1fr)
         );
 
     gap: 2rem;
@@ -282,7 +295,7 @@ section {
 
     box-shadow:
         0 8px 20px
-        rgba(0,0,0,0.04);
+        rgba(0,0,0,.04);
 }
 
 .service-card:hover {
@@ -295,7 +308,7 @@ section {
 
     box-shadow:
         0 14px 34px
-        rgba(0,0,0,0.08);
+        rgba(0,0,0,.08);
 }
 
 /* =========================
@@ -307,7 +320,7 @@ section {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 1.5rem;
 }
@@ -326,7 +339,7 @@ section {
 
     box-shadow:
         0 8px 20px
-        rgba(0,0,0,0.04);
+        rgba(0,0,0,.04);
 }
 
 /* =========================
@@ -340,7 +353,7 @@ section {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(220px, 1fr)
+            minmax(220px,1fr)
         );
 
     gap: 1.5rem;
@@ -360,7 +373,7 @@ section {
 
     box-shadow:
         0 8px 20px
-        rgba(0,0,0,0.04);
+        rgba(0,0,0,.04);
 }
 
 /* =========================
@@ -432,22 +445,22 @@ textarea:focus {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .nav-menu {
-        display: none;
-    }
+.nav-menu{
+display:none;
+}
 
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
+.steps-grid{
+grid-template-columns:1fr;
+}
 
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
+.contact-wrapper{
+grid-template-columns:1fr;
+}
 
-    .hero-title {
-        font-size: 2.2rem;
-    }
+.hero-title{
+font-size:2.2rem;
+}
 
 }
