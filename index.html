@@ -2,92 +2,102 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        CG Services | Creating Confidence. Generating Growth.
-    </title>
+    <title>CG Services | Creating Confidence. Generating Growth.</title>
 
     <meta name="description"
-          content="CG Services provides Accounting, GST, TDS, Bookkeeping and Technical Resource solutions for growing businesses.">
+        content="CG Services provides Accounting, GST, Bookkeeping, TDS, Staffing, Payroll and Financial Consulting services.">
 
-    <link rel="icon"
-          href="assets/logo/favicon.png">
+    <link rel="icon" href="assets/logo/favicon.png">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="css/variables.css">
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
-          href="css/style.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link rel="stylesheet"
-          href="css/responsive.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <!-- ===========================
-            HEADER START
-    ============================ -->
+    <!--=============================
+        Background Shapes
+    ==============================-->
 
-    <header class="header">
+    <img src="assets/backgrounds/dots.png"
+        class="bg-dots"
+        alt="">
+
+    <img src="assets/backgrounds/curves.png"
+        class="bg-curves"
+        alt="">
+
+    <img src="assets/backgrounds/rings.png"
+        class="bg-rings"
+        alt="">
+
+
+    <!--=============================
+            Header
+    ==============================-->
+
+    <header id="header">
 
         <div class="container">
 
             <nav class="navbar">
 
-                <!-- Logo -->
-
-                <a href="index.html" class="logo">
+                <a href="#" class="logo">
 
                     <img src="assets/logo/logo_nobg.png"
-                         alt="CG Services">
+                        alt="CG Services">
 
                 </a>
 
-                <!-- Navigation -->
-
                 <ul class="nav-links">
 
-                    <li><a href="#home">Home</a></li>
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
 
-                    <li><a href="#services">Services</a></li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
 
-                    <li><a href="#about">About</a></li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
 
-                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="#process">Process</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
 
                 </ul>
 
-                <!-- CTA -->
-
-                <a href="#contact"
-                   class="btn btn-primary">
+                <a href="#contact" class="btn-nav">
 
                     Get Started
 
                 </a>
 
-                <!-- Mobile Menu -->
+                <div class="menu-btn">
 
-                <div class="menu-toggle">
-
-                    ☰
+                    <i class="fa-solid fa-bars"></i>
 
                 </div>
 
@@ -97,71 +107,989 @@
 
     </header>
 
-    <!-- ===========================
-            HEADER END
-    ============================ -->
 
+    <!--=============================
+              HERO
+    ==============================-->
 
-    <main>
-<!-- ==========================================
-                HERO SECTION
-========================================== -->
+    <section class="hero" id="home">
 
-<section class="hero" id="home">
+        <div class="container hero-grid">
 
-    <!-- Background Decoration -->
-
-    <img src="assets/hero/city-skyline.png"
-         class="hero-bg"
-         alt="">
-
-    <img src="assets/backgrounds/dots.png"
-         class="hero-dots"
-         alt="">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <!-- Left -->
+            <!-- LEFT -->
 
             <div class="hero-left">
 
-                <span class="hero-tag">
+                <span class="hero-badge">
 
-                    Finance • Compliance • Resource Solutions
+                    Creating Confidence.
+                    Generating Growth.
 
                 </span>
 
                 <h1>
 
-                    Creating Confidence.<br>
-                    <span>Generating Growth.</span>
+                    Accounting,
+                    GST,
+                    Bookkeeping &
+                    Staffing
+                    Solutions.
 
                 </h1>
 
                 <p>
 
-                    CG Services helps businesses simplify accounting,
-                    taxation, compliance, bookkeeping and workforce
-                    solutions through practical financial expertise and
-                    dependable professional support.
+                    We help businesses simplify finance,
+                    taxation and workforce management with
+                    reliable, transparent and professional
+                    support tailored to growing companies.
 
                 </p>
 
                 <div class="hero-buttons">
 
-                    <a href="#services"
-                       class="btn btn-primary">
+                    <a href="#contact" class="btn-primary">
+
+                        Get Free Consultation
+
+                    </a>
+
+                    <a href="#services" class="btn-secondary">
 
                         Explore Services
 
                     </a>
 
-                    <a href="#contact"
-                       class="btn btn-secondary">
+                </div>
 
-                        Contact Us
+                <div class="hero-stats">
+
+                    <div class="stat-card">
+
+                        <h2>
+
+                            250+
+
+                        </h2>
+
+                        <span>
+
+                            Happy Clients
+
+                        </span>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h2>
+
+                            8+
+
+                        </h2>
+
+                        <span>
+
+                            Years Experience
+
+                        </span>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h2>
+
+                            99%
+
+                        </h2>
+
+                        <span>
+
+                            Client Satisfaction
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="hero-right">
+
+                <div class="hero-image">
+
+                    <img src="assets/hero/team-working.png"
+                        alt="Team">
+
+                    <img src="assets/hero/city-skyline.png"
+                        class="city"
+                        alt="City">
+
+                </div>
+
+                <!-- Floating Cards -->
+
+                <div class="floating-card card-one">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <div>
+
+                        <h4>
+
+                            Business Growth
+
+                        </h4>
+
+                        <span>
+
+                            Strategic Finance
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-two">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                    <div>
+
+                        <h4>
+
+                            GST Filing
+
+                        </h4>
+
+                        <span>
+
+                            Accurate & On Time
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-three">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <div>
+
+                        <h4>
+
+                            Staffing
+
+                        </h4>
+
+                        <span>
+
+                            Skilled Resources
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="growth-chart">
+
+                    <img src="assets/hero/growth-chart.png"
+                        alt="Growth">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+  
+      <!--=============================
+            TRUSTED BY
+    ==============================-->
+
+    <section class="trusted">
+
+        <div class="container">
+
+            <p class="section-mini-title">
+
+                Trusted by Startups, MSMEs & Growing Businesses
+
+            </p>
+
+            <div class="trusted-wrapper">
+
+                <div class="trusted-item">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <span>Accounting</span>
+
+                </div>
+
+                <div class="trusted-item">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                    <span>GST Returns</span>
+
+                </div>
+
+                <div class="trusted-item">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    <span>Bookkeeping</span>
+
+                </div>
+
+                <div class="trusted-item">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    <span>Staffing</span>
+
+                </div>
+
+                <div class="trusted-item">
+
+                    <i class="fa-solid fa-coins"></i>
+
+                    <span>Payroll</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            ABOUT
+    ==============================-->
+
+    <section class="about" id="about">
+
+        <div class="container about-grid">
+
+            <div class="about-image">
+
+                <img src="assets/illustrations/about-team.png"
+                    alt="About CG Services">
+
+                <div class="experience-card">
+
+                    <h2>
+
+                        8+
+
+                    </h2>
+
+                    <span>
+
+                        Years of Professional Experience
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-tag">
+
+                    ABOUT CG SERVICES
+
+                </span>
+
+                <h2>
+
+                    Professional Financial &
+                    Business Support That
+                    Helps You Grow.
+
+                </h2>
+
+                <p>
+
+                    CG Services is a trusted partner for businesses seeking
+                    accounting, taxation, bookkeeping, staffing and payroll
+                    solutions. Our experienced professionals simplify complex
+                    financial operations while ensuring compliance and
+                    operational excellence.
+
+                </p>
+
+                <div class="about-features">
+
+                    <div class="feature">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+
+                            Transparent Business Practices
+
+                        </span>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+
+                            Experienced Finance Experts
+
+                        </span>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+
+                            Timely Compliance
+
+                        </span>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+
+                            Dedicated Client Support
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <a href="#services"
+                    class="btn-primary">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            SERVICES
+    ==============================-->
+
+    <section class="services"
+        id="services">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+
+                    OUR SERVICES
+
+                </span>
+
+                <h2>
+
+                    Everything Your Business Needs
+                    Under One Roof
+
+                </h2>
+
+                <p>
+
+                    Comprehensive financial and business solutions
+                    tailored for startups, MSMEs and enterprises.
+
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <img src="assets/icons/accounting.png"
+                        alt="Accounting">
+
+                    <h3>
+
+                        Accounting
+
+                    </h3>
+
+                    <p>
+
+                        Complete accounting solutions including ledger
+                        management, reconciliations and financial reporting.
+
+                    </p>
+
+                </div>
+
+                <div class="service-card">
+
+                    <img src="assets/icons/bookkeeping.png"
+                        alt="Bookkeeping">
+
+                    <h3>
+
+                        Bookkeeping
+
+                    </h3>
+
+                    <p>
+
+                        Accurate bookkeeping that keeps your records
+                        organized and audit ready.
+
+                    </p>
+
+                </div>
+
+                <div class="service-card">
+
+                    <img src="assets/icons/gst.png"
+                        alt="GST">
+
+                    <h3>
+
+                        GST Services
+
+                    </h3>
+
+                    <p>
+
+                        GST registration, filing, reconciliation and
+                        advisory for complete compliance.
+
+                    </p>
+
+                </div>
+
+                <div class="service-card">
+
+                    <img src="assets/icons/tds.png"
+                        alt="TDS">
+
+                    <h3>
+
+                        TDS Compliance
+
+                    </h3>
+
+                    <p>
+
+                        End-to-end TDS calculations, return filing
+                        and statutory compliance.
+
+                    </p>
+
+                </div>
+
+                <div class="service-card">
+
+                    <img src="assets/icons/staffing.png"
+                        alt="Staffing">
+
+                    <h3>
+
+                        Staffing
+
+                    </h3>
+
+                    <p>
+
+                        Skilled accounting and finance professionals
+                        available for temporary and permanent roles.
+
+                    </p>
+
+                </div>
+
+                <div class="service-card">
+
+                    <img src="assets/icons/finance.png"
+                        alt="Finance">
+
+                    <h3>
+
+                        Financial Consulting
+
+                    </h3>
+
+                    <p>
+
+                        Improve business performance with expert
+                        financial planning and advisory.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+  
+      <!--=============================
+            PROCESS
+    ==============================-->
+
+    <section class="process" id="process">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>OUR PROCESS</span>
+
+                <h2>Simple. Transparent. Effective.</h2>
+
+                <p>
+                    We follow a structured workflow that ensures every
+                    client receives timely, accurate and professional
+                    financial support.
+                </p>
+
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <img src="assets/icons/process.png"
+                            alt="Consultation">
+
+                    </div>
+
+                    <h3>Consultation</h3>
+
+                    <p>
+
+                        Understand your business, compliance requirements
+                        and current financial process.
+
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <img src="assets/icons/shield.png"
+                            alt="Planning">
+
+                    </div>
+
+                    <h3>Planning</h3>
+
+                    <p>
+
+                        Prepare customized accounting and compliance
+                        strategy suitable for your business.
+
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="fa-solid fa-gears"></i>
+
+                    </div>
+
+                    <h3>Execution</h3>
+
+                    <p>
+
+                        Execute bookkeeping, taxation,
+                        payroll and staffing efficiently.
+
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-icon">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                    </div>
+
+                    <h3>Growth</h3>
+
+                    <p>
+
+                        Deliver reports, insights and continuous
+                        support to help your business grow.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            WHY CHOOSE US
+    ==============================-->
+
+    <section class="why-us">
+
+        <div class="container why-grid">
+
+            <div class="why-content">
+
+                <span class="section-tag">
+
+                    WHY CHOOSE US
+
+                </span>
+
+                <h2>
+
+                    Reliable Partner
+                    For Your Business Success
+
+                </h2>
+
+                <p>
+
+                    Whether you're a startup or an established company,
+                    CG Services provides dependable financial support,
+                    compliance management and skilled staffing
+                    solutions under one roof.
+
+                </p>
+
+                <ul class="why-list">
+
+                    <li>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Experienced Professionals
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Affordable Pricing
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        On-Time Delivery
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Confidential Service
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Dedicated Support
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="why-image">
+
+                <img src="assets/hero/team-working.png"
+                    alt="CG Services">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            CTA
+    ==============================-->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+
+                    Ready To Grow
+                    Your Business?
+
+                </h2>
+
+                <p>
+
+                    Partner with CG Services for reliable accounting,
+                    GST, staffing and bookkeeping solutions.
+
+                </p>
+
+                <a href="#contact"
+                    class="btn-primary">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            CONTACT
+    ==============================-->
+
+    <section class="contact"
+        id="contact">
+
+        <div class="container contact-grid">
+
+            <div class="contact-info">
+
+                <span class="section-tag">
+
+                    CONTACT US
+
+                </span>
+
+                <h2>
+
+                    Let's Talk About
+                    Your Business
+
+                </h2>
+
+                <p>
+
+                    Reach out today for professional accounting,
+                    bookkeeping, GST and staffing services.
+
+                </p>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <span>
+
+                        +91 XXXXX XXXXX
+
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span>
+
+                        info@cgservicesinfo.org
+
+                    </span>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+
+                        Hyderabad, Telangana
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <form class="contact-form">
+
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input
+                    type="text"
+                    placeholder="Phone Number">
+
+                <textarea
+                    rows="6"
+                    placeholder="Your Message"></textarea>
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!--=============================
+            FOOTER
+    ==============================-->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <img src="assets/logo/logo_nobg.png"
+                    class="footer-logo"
+                    alt="CG Services">
+
+                <p>
+
+                    Creating Confidence.
+                    Generating Growth.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Quick Links
+
+                </h4>
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#services">Services</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Services
+
+                </h4>
+
+                <a href="#">Accounting</a>
+
+                <a href="#">GST</a>
+
+                <a href="#">Bookkeeping</a>
+
+                <a href="#">Staffing</a>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Follow Us
+
+                </h4>
+
+                <div class="social-links">
+
+                    <a href="#">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fab fa-linkedin-in"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+                    <a href="#">
+
+                        <i class="fab fa-x-twitter"></i>
 
                     </a>
 
@@ -169,165 +1097,18 @@
 
             </div>
 
-            <!-- Right -->
+        </div>
 
-            <div class="hero-right">
+        <div class="copyright">
 
-                <img src="assets/hero/team-working.png"
-                     class="hero-main"
-                     alt="CG Services">
-
-                <img src="assets/hero/growth-chart.png"
-                     class="growth-chart"
-                     alt="Growth">
-
-            </div>
+            © 2026 CG Services.
+            All Rights Reserved.
 
         </div>
 
-    </div>
+    </footer>
 
-</section>
-
-        <!-- ==========================================
-                SERVICES
-========================================== -->
-
-<section class="services bg-light" id="services">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>OUR SERVICES</span>
-
-            <h2>Solutions That Drive Business Success</h2>
-
-            <p>
-                We provide practical financial, compliance, and workforce
-                solutions that help organizations stay compliant,
-                improve operational efficiency, and scale with confidence.
-            </p>
-
-        </div>
-
-        <div class="services-grid">
-
-            <!-- Card 1 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/accounting.png"
-                     class="icon"
-                     alt="Accounting">
-
-                <h3>Accounting Services</h3>
-
-                <p>
-                    End-to-end accounting support including journal entries,
-                    reconciliations, month-end closure, MIS reporting,
-                    and financial record maintenance.
-                </p>
-
-            </div>
-
-            <!-- Card 2 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/bookkeeping.png"
-                     class="icon"
-                     alt="Bookkeeping">
-
-                <h3>Bookkeeping</h3>
-
-                <p>
-                    Organized bookkeeping services to maintain accurate
-                    financial records, vendor/customer ledgers,
-                    and statutory documentation.
-                </p>
-
-            </div>
-
-            <!-- Card 3 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/gst.png"
-                     class="icon"
-                     alt="GST">
-
-                <h3>GST Compliance</h3>
-
-                <p>
-                    GST registration assistance, return filing,
-                    reconciliations, and ongoing indirect tax compliance
-                    support for businesses.
-                </p>
-
-            </div>
-
-            <!-- Card 4 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/tds.png"
-                     class="icon"
-                     alt="TDS">
-
-                <h3>TDS Returns</h3>
-
-                <p>
-                    Accurate TDS calculations, quarterly return filing,
-                    challan reconciliation, and statutory reporting
-                    support.
-                </p>
-
-            </div>
-
-            <!-- Card 5 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/staffing.png"
-                     class="icon"
-                     alt="Technical Resources">
-
-                <h3>Technical Resource Augmentation</h3>
-
-                <p>
-                    Flexible deployment of experienced professionals
-                    for finance, accounting, taxation,
-                    and project-based business requirements.
-                </p>
-
-            </div>
-
-            <!-- Card 6 -->
-
-            <div class="card service-card">
-
-                <img src="assets/icons/shield.png"
-                     class="icon"
-                     alt="Compliance">
-
-                <h3>Business Compliance</h3>
-
-                <p>
-                    Supporting businesses with statutory compliance,
-                    documentation, governance, and regulatory
-                    obligations.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-        
-    </main>
+    <script src="script.js"></script>
 
 </body>
 
