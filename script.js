@@ -92,33 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hero = document.querySelector(".hero");
 
-    const process = document.querySelector(".process-card");
-    const growth = document.querySelector(".growth-chart");
-
-    if (hero) {
-
-        hero.addEventListener("mousemove", e => {
-
-            const x = (e.clientX / window.innerWidth - .5);
-            const y = (e.clientY / window.innerHeight - .5);
-
-            if (process) {
-
-                process.style.transform =
-                    `translate(${x * 15}px,${y * 10}px)`;
-
-            }
-
-            if (growth) {
-
-                growth.style.transform =
-                    `translate(${x * -18}px,${y * -12}px)`;
-
-            }
-
-        });
-
-    }
 
 
     /*==========================================
