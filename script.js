@@ -5,9 +5,54 @@ script.js
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*=========================================
-        SMOOTH SCROLL
-    =========================================*/
+    /*==========================================
+    MOBILE MENU
+    ==========================================*/
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navMenu = document.querySelector("nav ul");
+
+    if (menuBtn && navMenu) {
+
+        menuBtn.addEventListener("click", () => {
+
+            navMenu.classList.toggle("active");
+
+            menuBtn.innerHTML = navMenu.classList.contains("active")
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    }
+
+
+    /*==========================================
+    STICKY HEADER
+    ==========================================*/
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 60) {
+
+            header.style.boxShadow = "0 12px 35px rgba(0,0,0,.08)";
+            header.style.background = "rgba(255,255,255,.98)";
+
+        } else {
+
+            header.style.boxShadow = "none";
+            header.style.background = "rgba(255,255,255,.94)";
+
+        }
+
+    });
+
+
+    /*==========================================
+    SMOOTH SCROLL
+    ==========================================*/
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -21,74 +66,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
             window.scrollTo({
 
-                top: target.offsetTop - 30,
+                top: target.offsetTop - 80,
 
                 behavior: "smooth"
 
             });
+
+            if (navMenu.classList.contains("active")) {
+
+                navMenu.classList.remove("active");
+
+                menuBtn.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            }
 
         });
 
     });
 
 
-    /*=========================================
-        HERO PARALLAX
-    =========================================*/
+    /*==========================================
+    HERO PARALLAX
+    ==========================================*/
 
     const hero = document.querySelector(".hero");
 
-    const city = document.querySelector(".city");
-    const team = document.querySelector(".team");
-    const growth = document.querySelector(".growth");
-    const analytics = document.querySelector(".analytics-left");
-    const circles = document.querySelectorAll(".service-icon");
+    const process = document.querySelector(".process-card");
+    const growth = document.querySelector(".growth-chart");
 
     if (hero) {
 
-        hero.addEventListener("mousemove", (e) => {
+        hero.addEventListener("mousemove", e => {
 
             const x = (e.clientX / window.innerWidth - .5);
             const y = (e.clientY / window.innerHeight - .5);
 
-            if (city) {
+            if (process) {
 
-                city.style.transform =
-                    `translate(${x * 18}px,${y * 12}px)`;
+                process.style.transform =
+                    `translate(${x * 15}px,${y * 10}px)`;
 
             }
 
             if (growth) {
 
                 growth.style.transform =
-                    `translate(${x * -25}px,${y * -18}px)`;
+                    `translate(${x * -18}px,${y * -12}px)`;
 
             }
-
-            if (analytics) {
-
-                analytics.style.transform =
-                    `translate(${x * 20}px,${y * 18}px)`;
-
-            }
-
-            circles.forEach((circle, i) => {
-
-                circle.style.transform =
-                    `translateY(${Math.sin(Date.now() / 600 + i) * 4}px)`;
-
-            });
 
         });
 
     }
 
 
-    /*=========================================
-        FADE IN
-    =========================================*/
+    /*==========================================
+    FADE ON SCROLL
+    ==========================================*/
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
 
         entries.forEach(entry => {
 
@@ -106,37 +143,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
     document.querySelectorAll(
 
-        ".about,\
-        .services,\
-        .vision-strip,\
-        .contact,\
-        .quick-box,\
+        ".vision-item,\
         .service-card,\
-        .vision-item,\
+        .quick-item,\
         .about-image,\
         .about-content,\
         .contact-info,\
-        .contact-form"
+        .contact-form,\
+        .cta-box"
 
-    ).forEach(el => {
-
-        observer.observe(el);
-
-    });
+    ).forEach(el => observer.observe(el));
 
 
-    /*=========================================
-        BUTTON RIPPLE
-    =========================================*/
+    /*==========================================
+    BUTTON HOVER
+    ==========================================*/
 
-    document.querySelectorAll(".primary-btn").forEach(btn => {
+    document.querySelectorAll(
+
+        ".nav-btn,.cta-btn,.contact-form button"
+
+    ).forEach(btn => {
 
         btn.addEventListener("mouseenter", () => {
 
-            btn.style.transform = "translateY(-4px)";
+            btn.style.transform = "translateY(-3px)";
 
         });
 
@@ -149,55 +182,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /*=========================================
-        SERVICE CARD HOVER
-    =========================================*/
+    /*==========================================
+    CONTACT FORM
+    ==========================================*/
 
-    document.querySelectorAll(".service-card").forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-
-            card.style.boxShadow =
-                "0 25px 60px rgba(19,49,82,.18)";
-
-        });
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.boxShadow =
-                "";
-
-        });
-
-    });
-
-
-    /*=========================================
-        QUICK BOX
-    =========================================*/
-
-    document.querySelectorAll(".quick-box").forEach(box => {
-
-        box.addEventListener("mouseenter", () => {
-
-            box.style.transform = "translateY(-10px)";
-
-        });
-
-        box.addEventListener("mouseleave", () => {
-
-            box.style.transform = "translateY(0)";
-
-        });
-
-    });
-
-
-    /*=========================================
-        CONTACT FORM
-    =========================================*/
-
-    const form = document.querySelector("form");
+    const form = document.querySelector(".contact-form form");
 
     if (form) {
 
@@ -205,146 +194,141 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            const button = form.querySelector("button");
-
-            button.innerHTML = "Sending...";
+            const button = this.querySelector("button");
 
             button.disabled = true;
 
+            button.innerHTML = "Sending...";
+
             setTimeout(() => {
 
-                button.innerHTML = "✓ Enquiry Sent";
+                button.innerHTML = "✓ Message Sent";
 
                 button.style.background = "#198754";
 
                 form.reset();
 
-            }, 1500);
+                setTimeout(() => {
+
+                    button.innerHTML = "Send Message";
+
+                    button.style.background = "";
+
+                    button.disabled = false;
+
+                }, 2500);
+
+            }, 1200);
 
         });
 
     }
 
 
-    /*=========================================
-        HERO ICON FLOAT
-    =========================================*/
+    /*==========================================
+    ACTIVE NAVIGATION
+    ==========================================*/
 
-    circles.forEach((icon, index) => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
 
-        icon.animate(
+    window.addEventListener("scroll", () => {
 
-            [
+        let current = "";
 
-                {
+        sections.forEach(section => {
 
-                    transform: "translateY(0)"
+            const top = section.offsetTop - 120;
 
-                },
+            if (window.scrollY >= top) {
 
-                {
-
-                    transform: "translateY(-8px)"
-
-                },
-
-                {
-
-                    transform: "translateY(0)"
-
-                }
-
-            ],
-
-            {
-
-                duration: 2500 + (index * 250),
-
-                iterations: Infinity
+                current = section.getAttribute("id");
 
             }
 
-        );
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("current");
+
+            if (link.getAttribute("href") === "#" + current) {
+
+                link.classList.add("current");
+
+            }
+
+        });
 
     });
-
-
-    /*=========================================
-        GROWTH IMAGE FLOAT
-    =========================================*/
-
-    if (growth) {
-
-        growth.animate(
-
-            [
-
-                {
-
-                    transform: "translateY(0px)"
-
-                },
-
-                {
-
-                    transform: "translateY(-12px)"
-
-                },
-
-                {
-
-                    transform: "translateY(0px)"
-
-                }
-
-            ],
-
-            {
-
-                duration: 3500,
-
-                iterations: Infinity
-
-            }
-
-        );
-
-    }
-
 
 });
 
 
-/*=========================================
-CREATE CSS THROUGH JS
-=========================================*/
+/*==========================================
+DYNAMIC CSS
+==========================================*/
 
 const style = document.createElement("style");
 
 style.innerHTML = `
 
-.about,
-.services,
-.contact,
-.vision-strip,
+.show{
+
+opacity:1 !important;
+transform:translateY(0) !important;
+
+}
+
+.vision-item,
+.service-card,
+.quick-item,
 .about-image,
 .about-content,
 .contact-info,
 .contact-form,
-.service-card,
-.quick-box,
-.vision-item{
+.cta-box{
 
 opacity:0;
 transform:translateY(40px);
-transition:.9s ease;
+transition:.8s ease;
 
 }
 
-.show{
+.current{
 
-opacity:1;
-transform:translateY(0);
+color:#ba9653 !important;
+
+}
+
+@media(max-width:768px){
+
+nav ul{
+
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:#fff;
+display:none;
+flex-direction:column;
+padding:30px 0;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+nav ul.active{
+
+display:flex;
+
+}
+
+nav ul li{
+
+text-align:center;
+padding:12px 0;
+
+}
 
 }
 
