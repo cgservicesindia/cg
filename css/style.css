@@ -1,1 +1,392 @@
+/* ==========================================
+   CG SERVICES
+   Global Styles
+   Version: 1.0
+==========================================*/
 
+/* ========= RESET ========= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg-main);
+    color:var(--text-color);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+/* ========= SELECTION ========= */
+
+::selection{
+    background:var(--secondary);
+    color:#fff;
+}
+
+/* ========= IMAGES ========= */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ========= LINKS ========= */
+
+a{
+    text-decoration:none;
+    color:inherit;
+    transition:var(--transition);
+}
+
+/* ========= LIST ========= */
+
+ul{
+    list-style:none;
+}
+
+/* ========= CONTAINER ========= */
+
+.container{
+
+    width:min(92%, var(--container-width));
+
+    margin:auto;
+
+}
+
+/* ========= SECTION ========= */
+
+section{
+
+    padding:var(--section-padding) 0;
+
+    position:relative;
+
+}
+
+/* ========= HEADINGS ========= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--heading-color);
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:3.8rem;
+
+}
+
+h2{
+
+    font-size:2.7rem;
+
+}
+
+h3{
+
+    font-size:1.5rem;
+
+}
+
+p{
+
+    color:var(--text-color);
+
+    font-size:1rem;
+
+}
+
+/* ========= BUTTONS ========= */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    background:#0f2945;
+
+}
+
+.btn-secondary{
+
+    background:var(--secondary);
+
+    color:#fff;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-4px);
+
+    background:#a98442;
+
+}
+
+/* ========= SECTION TITLE ========= */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    font-size:.9rem;
+
+}
+
+.section-title h2{
+
+    margin-top:12px;
+
+}
+
+.section-title p{
+
+    margin:20px auto 0;
+
+    max-width:700px;
+
+}
+
+/* ========= CARDS ========= */
+
+.card{
+
+    background:#fff;
+
+    border-radius:var(--radius-lg);
+
+    padding:35px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    border:1px solid rgba(0,0,0,.05);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ========= ICONS ========= */
+
+.icon{
+
+    width:70px;
+
+    margin-bottom:25px;
+
+}
+
+/* ========= BACKGROUND HELPERS ========= */
+
+.bg-light{
+
+    background:var(--bg-section);
+
+}
+
+.bg-dark{
+
+    background:var(--bg-dark);
+
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark p{
+
+    color:#fff;
+
+}
+
+/* ========= GRID ========= */
+
+.grid{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+.grid-2{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-3{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.grid-4{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ========= ANIMATIONS ========= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ========= UTILITIES ========= */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{
+
+    margin-top:10px;
+
+}
+
+.mt-2{
+
+    margin-top:20px;
+
+}
+
+.mt-3{
+
+    margin-top:30px;
+
+}
+
+.mt-4{
+
+    margin-top:40px;
+
+}
+
+.mt-5{
+
+    margin-top:60px;
+
+}
+
+/* ========= SCROLLBAR ========= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
