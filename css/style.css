@@ -490,3 +490,158 @@ p{
     color:var(--primary);
 
 }
+
+/*=========================================
+                HERO
+=========================================*/
+
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding-top:170px;
+    padding-bottom:120px;
+
+}
+
+.hero-bg{
+
+    position:absolute;
+
+    bottom:0;
+    right:0;
+
+    width:55%;
+
+    opacity:.08;
+
+    pointer-events:none;
+
+}
+
+.hero-dots{
+
+    position:absolute;
+
+    top:140px;
+    left:40px;
+
+    width:180px;
+
+    opacity:.25;
+
+}
+
+.hero-content{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.hero-left h1{
+
+    font-size:4.2rem;
+
+    margin:18px 0;
+
+}
+
+.hero-left h1 span{
+
+    color:var(--secondary);
+
+}
+
+.hero-left p{
+
+    font-size:1.1rem;
+
+    max-width:560px;
+
+    margin-bottom:40px;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#EEF3F8;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    font-size:.8rem;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.hero-right{
+
+    position:relative;
+
+}
+
+.hero-main{
+
+    width:100%;
+
+}
+
+.growth-chart{
+
+    position:absolute;
+
+    width:180px;
+
+    right:-30px;
+
+    top:40px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
