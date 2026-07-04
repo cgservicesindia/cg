@@ -1,1 +1,21 @@
+@media(max-width:991px){
 
+.nav-links{
+
+display:none;
+
+}
+
+.header .btn{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+}
+
+}
