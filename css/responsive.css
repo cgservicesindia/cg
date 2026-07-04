@@ -19,3 +19,83 @@ display:block;
 }
 
 }
+
+/*=========================================
+                HERO
+=========================================*/
+
+@media(max-width:991px){
+
+.hero-content{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-left p{
+
+margin:auto auto 40px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+margin-top:50px;
+
+}
+
+.hero-bg{
+
+width:90%;
+
+}
+
+.hero-left h1{
+
+font-size:3rem;
+
+}
+
+.growth-chart{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+
+padding-top:130px;
+
+}
+
+.hero-left h1{
+
+font-size:2.3rem;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+}
