@@ -451,89 +451,28 @@ text-transform:uppercase;
 
 
 /*=====================================
-SKYLINE
+HERO
 =====================================*/
 
-.skyline{
+.hero-image{
 
 position:absolute;
 
-left:90px;
+left:50%;
 
-bottom:120px;
+bottom:0;
 
-width:720px;
+transform:translateX(-50%);
 
-opacity:.95;
+width:100%;
 
-filter:brightness(3) contrast(.45);
+max-width:900px;
 
-z-index:6;
+z-index:5;
 
 pointer-events:none;
 
 }
-
-
-
-/*=====================================
-TEAM
-=====================================*/
-
-.team{
-
-position:absolute;
-
-left:120px;
-
-bottom:0;
-
-width:760px;
-
-z-index:5;
-
-}
-
-
-
-/*=====================================
-PROCESS IMAGE
-=====================================*/
-
-.process-card{
-
-position:absolute;
-
-left:-10px;
-
-top:240px;
-
-width:250px;
-
-z-index:9;
-
-}
-
-
-
-/*=====================================
-GROWTH CHART
-=====================================*/
-
-.growth-chart{
-
-position:absolute;
-
-right:-10px;
-
-top:280px;
-
-width:290px;
-
-z-index:10;
-
-}
-
 
 
 /*=====================================
