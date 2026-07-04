@@ -390,3 +390,103 @@ p{
     background:var(--secondary);
 
 }
+
+/*=========================================
+            HEADER
+=========================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#ffffffee;
+
+    backdrop-filter:blur(12px);
+
+    z-index:999;
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+}
+
+.navbar{
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo img{
+
+    height:52px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+}
+
+.nav-links a{
+
+    font-weight:600;
+
+    color:var(--heading-color);
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    color:var(--primary);
+
+}
