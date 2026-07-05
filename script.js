@@ -196,14 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*==========================================
-CONTACT FORM (FORMSPREE AJAX)
+CONTACT FORM (ZOHO)
 ==========================================*/
 
 const form = document.querySelector(".contact-form form");
 
 if (form) {
 
-    form.addEventListener("submit", async function(e) {
+    form.addEventListener("submit", async function(e){
 
         e.preventDefault();
 
@@ -212,53 +212,38 @@ if (form) {
         button.disabled = true;
         button.innerHTML = "Sending...";
 
-        const data = new FormData(form);
+        try{
 
-        try {
-
-            const response = await fetch(form.action, {
-
-                method: "POST",
-                body: data,
-                headers: {
-                    "Accept": "application/json"
-                }
-
+            await fetch(form.action,{
+                method:"POST",
+                body:new FormData(form),
+                mode:"no-cors"
             });
 
-            if (response.ok) {
+            button.innerHTML = "✓ Message Sent";
+            button.style.background="#198754";
 
-                button.innerHTML = "✓ Message Sent";
-                button.style.background = "#198754";
+            form.reset();
 
-                form.reset();
+        }
+        catch{
 
-            } else {
-
-                button.innerHTML = "Failed";
-                button.style.background = "#dc3545";
-
-            }
-
-        } catch {
-
-            button.innerHTML = "Failed";
-            button.style.background = "#dc3545";
+            button.innerHTML="Failed";
+            button.style.background="#dc3545";
 
         }
 
-        setTimeout(() => {
+        setTimeout(()=>{
 
-            button.innerHTML = "Send Message";
-            button.style.background = "";
-            button.disabled = false;
+            button.innerHTML="Send Message";
+            button.style.background="";
+            button.disabled=false;
 
-        }, 2500);
+        },2500);
 
     });
 
 }
-
 
 /*==========================================
 DYNAMIC CSS
