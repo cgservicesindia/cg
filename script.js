@@ -196,6 +196,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*==========================================
+CONTACT FORM (FORMSPREE AJAX)
+==========================================*/
+
+const form = document.querySelector(".contact-form form");
+
+if (form) {
+
+    form.addEventListener("submit", async function(e) {
+
+        e.preventDefault();
+
+        const button = form.querySelector("button");
+
+        button.disabled = true;
+        button.innerHTML = "Sending...";
+
+        const data = new FormData(form);
+
+        try {
+
+            const response = await fetch(form.action, {
+
+                method: "POST",
+                body: data,
+                headers: {
+                    "Accept": "application/json"
+                }
+
+            });
+
+            if (response.ok) {
+
+                button.innerHTML = "✓ Message Sent";
+                button.style.background = "#198754";
+
+                form.reset();
+
+            } else {
+
+                button.innerHTML = "Failed";
+                button.style.background = "#dc3545";
+
+            }
+
+        } catch {
+
+            button.innerHTML = "Failed";
+            button.style.background = "#dc3545";
+
+        }
+
+        setTimeout(() => {
+
+            button.innerHTML = "Send Message";
+            button.style.background = "";
+            button.disabled = false;
+
+        }, 2500);
+
+    });
+
+}
+
+
+/*==========================================
 DYNAMIC CSS
 ==========================================*/
 
