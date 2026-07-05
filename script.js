@@ -156,49 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*==========================================
-    CONTACT FORM
-    ==========================================*/
-
-    const form = document.querySelector(".contact-form form");
-
-    if (form) {
-
-        form.addEventListener("submit", function (e) {
-
-            e.preventDefault();
-
-            const button = this.querySelector("button");
-
-            button.disabled = true;
-
-            button.innerHTML = "Sending...";
-
-            setTimeout(() => {
-
-                button.innerHTML = "✓ Message Sent";
-
-                button.style.background = "#198754";
-
-                form.reset();
-
-                setTimeout(() => {
-
-                    button.innerHTML = "Send Message";
-
-                    button.style.background = "";
-
-                    button.disabled = false;
-
-                }, 2500);
-
-            }, 1200);
-
-        });
-
-    }
-
-
-    /*==========================================
     ACTIVE NAVIGATION
     ==========================================*/
 
