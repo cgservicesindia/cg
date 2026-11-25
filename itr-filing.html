@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your Income Tax Return filing request securely.">
+  <title>Income Tax Filing | Your Company</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #263449;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #102c50;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 27px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      color: #d9e6f5;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 35px auto;
+      padding: 0 16px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      color: #102c50;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #66758a;
+      font-size: 14px;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .section-title {
+      color: #102c50;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 25px 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5eaf0;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .required {
+      color: #dc3545;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d5dce5;
+      border-radius: 7px;
+      font-size: 14px;
+      background: white;
+      color: #263449;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2463a6;
+      box-shadow: 0 0 0 2px rgba(36,99,166,.1);
+    }
+
+    input[type="file"] {
+      background: #f8fafc;
+      padding: 10px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 9px 0;
+      font-size: 14px;
+    }
+
+    .hint {
+      color: #718096;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .upload-note {
+      background: #eff6ff;
+      padding: 13px;
+      border-radius: 7px;
+      font-size: 13px;
+      color: #28517d;
+      margin-bottom: 18px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #1265b1;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background: #0d4d89;
+    }
+
+    .consent {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 7px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #718096;
+      font-size: 13px;
+    }
+
+    @media(max-width:600px) {
+      .form-card {
+        padding: 18px;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Income Tax Return Filing</h1>
+  <p>Professional Tax Filing Assistance</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>Submit Your ITR Filing Request</h2>
+    <p>Provide your details and upload the required documents.
+       Our team will review your request and contact you.</p>
+  </div>
+
+  <div class="form-card">
+
+    <!--
+      IMPORTANT:
+      Replace this form with your Zoho Forms embed code
+      after creating your form in Zoho Forms.
+      Do not use a public GitHub form endpoint for sensitive data.
+    -->
+
+    <div id="zoho-form-placeholder">
+
+      <div class="upload-note">
+        Complete the sections below in your Zoho Form.
+        The actual submission and document upload will be
+        handled securely by Zoho Forms.
+      </div>
+
+      <h3 class="section-title">1. Personal Information</h3>
+
+      <div class="field">
+        <label>Client Type <span class="required">*</span></label>
+        <select name="client_type" required>
+          <option value="">Select</option>
+          <option>New Client</option>
+          <option>Existing Client</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Full Name <span class="required">*</span></label>
+        <input type="text" name="full_name"
+               placeholder="Enter your full name" required>
+      </div>
+
+      <div class="field">
+        <label>PAN Number <span class="required">*</span></label>
+        <input type="text" name="pan"
+               placeholder="ABCDE1234F"
+               maxlength="10"
+               pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]"
+               title="Enter a valid 10-character PAN"
+               required>
+      </div>
+
+      <div class="field">
+        <label>Date of Birth</label>
+        <input type="date" name="dob">
+      </div>
+
+      <div class="field">
+        <label>Mobile Number <span class="required">*</span></label>
+        <input type="tel" name="mobile"
+               placeholder="Enter mobile number" required>
+      </div>
+
+      <div class="field">
+        <label>Email Address <span class="required">*</span></label>
+        <input type="email" name="email"
+               placeholder="Enter email address" required>
+      </div>
+
+      <div class="field">
+        <label>Address</label>
+        <textarea name="address" rows="3"
+                  placeholder="Enter your address"></textarea>
+      </div>
+
+      <h3 class="section-title">2. Income Tax Filing Details</h3>
+
+      <div class="field">
+        <label>Assessment Year <span class="required">*</span></label>
+        <select name="assessment_year" required>
+          <option value="">Select Assessment Year</option>
+          <option>2026-27</option>
+          <option>2025-26</option>
+          <option>2024-25</option>
+          <option>Other / Previous Year</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Type of Taxpayer</label>
+        <select name="taxpayer_type">
+          <option value="">Select</option>
+          <option>Individual</option>
+          <option>HUF</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Source of Income</label>
+        <select name="income_source">
+          <option value="">Select</option>
+          <option>Salary</option>
+          <option>Business</option>
+          <option>Professional</option>
+          <option>House Property</option>
+          <option>Capital Gains</option>
+          <option>Other Income</option>
+          <option>Multiple Sources</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Tax Regime Preference</label>
+        <select name="tax_regime">
+          <option value="">Please advise me</option>
+          <option>Old Tax Regime</option>
+          <option>New Tax Regime</option>
+          <option>Please advise me</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Any Foreign Income?</label>
+        <select name="foreign_income">
+          <option>No</option>
+          <option>Yes</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Any Capital Gains?</label>
+        <select name="capital_gains">
+          <option>No</option>
+          <option>Shares / Mutual Funds</option>
+          <option>Property</option>
+          <option>Other</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+
+      <h3 class="section-title">3. Document Submission</h3>
+
+      <div class="upload-note">
+        Upload clear PDF, JPG or PNG documents.
+        The following upload fields should be configured
+        in Zoho Forms with suitable file size limits.
+      </div>
+
+      <div class="field">
+        <label>Form 16</label>
+        <input type="file" name="form16">
+      </div>
+
+      <div class="field">
+        <label>AIS / TIS</label>
+        <input type="file" name="ais_tis">
+      </div>
+
+      <div class="field">
+        <label>Form 26AS</label>
+        <input type="file" name="form26as">
+      </div>
+
+      <div class="field">
+        <label>Bank Statements</label>
+        <input type="file" name="bank_statement">
+      </div>
+
+      <div class="field">
+        <label>Investment Proofs</label>
+        <input type="file" name="investment_proofs">
+      </div>
+
+      <div class="field">
+        <label>Capital Gains Statement</label>
+        <input type="file" name="capital_gains_docs">
+      </div>
+
+      <div class="field">
+        <label>Previous Year's ITR</label>
+        <input type="file" name="previous_itr">
+      </div>
+
+      <div class="field">
+        <label>Other Supporting Documents</label>
+        <input type="file" name="other_documents">
+      </div>
+
+      <h3 class="section-title">4. Additional Information</h3>
+
+      <div class="field">
+        <label>Have you received any Income Tax Notice?</label>
+        <select name="tax_notice">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Additional Comments</label>
+        <textarea name="comments" rows="4"
+          placeholder="Enter any additional information..."></textarea>
+      </div>
+
+      <h3 class="section-title">5. Declaration & Authorization</h3>
+
+      <div class="consent">
+
+        <label class="choice">
+          <input type="checkbox" required>
+          I confirm that the information provided is accurate.
+        </label>
+
+        <label class="choice">
+          <input type="checkbox" required>
+          I authorize the service provider to review my
+          documents and prepare my income tax return.
+        </label>
+
+        <label class="choice">
+          <input type="checkbox" required>
+          I agree to be contacted regarding my filing request.
+        </label>
+
+        <p class="hint">
+          Submission of this request does not constitute
+          confirmation that the return has been filed.
+        </p>
+
+      </div>
+
+      <!-- This is a design preview, not a working submission form.
+           Replace the complete placeholder with Zoho's embed code. -->
+
+      <button type="button" class="submit-btn"
+              onclick="alert('Please connect your Zoho Forms embed code before accepting client submissions.')">
+        Submit ITR Filing Request
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Your Company. All Rights Reserved.
+  <br>
+  Income Tax Filing Assistance
+</footer>
+
+</body>
+</html>
