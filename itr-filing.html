@@ -198,8 +198,10 @@
 
   <div class="intro">
     <h2>Submit Your ITR Filing Request</h2>
-    <p>Provide your details and upload the required documents.
-       Our team will review your request and contact you.</p>
+    <p>
+      Provide your details and upload the required documents.
+      Our team will review your request and contact you.
+    </p>
   </div>
 
   <div class="form-card">
@@ -218,6 +220,8 @@
         The actual submission and document upload will be
         handled securely by Zoho Forms.
       </div>
+
+      <!-- 1. PERSONAL INFORMATION -->
 
       <h3 class="section-title">1. Personal Information</h3>
 
@@ -269,17 +273,24 @@
                   placeholder="Enter your address"></textarea>
       </div>
 
+      <!-- 2. INCOME TAX FILING DETAILS -->
+
       <h3 class="section-title">2. Income Tax Filing Details</h3>
 
       <div class="field">
-        <label>Assessment Year <span class="required">*</span></label>
-        <select name="assessment_year" required>
-          <option value="">Select Assessment Year</option>
-          <option>2026-27</option>
-          <option>2025-26</option>
-          <option>2024-25</option>
-          <option>Other / Previous Year</option>
+        <label>
+          Assessment Year <span class="required">*</span>
+        </label>
+
+        <select name="assessment_year"
+                id="assessment_year" required>
+          <option value="">Loading Assessment Years...</option>
         </select>
+
+        <p class="hint">
+          Assessment years are automatically updated based on
+          the Indian financial year.
+        </p>
       </div>
 
       <div class="field">
@@ -336,6 +347,8 @@
         </select>
       </div>
 
+      <!-- 3. DOCUMENT SUBMISSION -->
+
       <h3 class="section-title">3. Document Submission</h3>
 
       <div class="upload-note">
@@ -384,6 +397,8 @@
         <input type="file" name="other_documents">
       </div>
 
+      <!-- 4. ADDITIONAL INFORMATION -->
+
       <h3 class="section-title">4. Additional Information</h3>
 
       <div class="field">
@@ -400,23 +415,25 @@
           placeholder="Enter any additional information..."></textarea>
       </div>
 
+      <!-- 5. DECLARATION -->
+
       <h3 class="section-title">5. Declaration & Authorization</h3>
 
       <div class="consent">
 
         <label class="choice">
-          <input type="checkbox" required>
+          <input type="checkbox" name="accuracy_consent" required>
           I confirm that the information provided is accurate.
         </label>
 
         <label class="choice">
-          <input type="checkbox" required>
+          <input type="checkbox" name="authorization_consent" required>
           I authorize the service provider to review my
           documents and prepare my income tax return.
         </label>
 
         <label class="choice">
-          <input type="checkbox" required>
+          <input type="checkbox" name="contact_consent" required>
           I agree to be contacted regarding my filing request.
         </label>
 
@@ -427,8 +444,7 @@
 
       </div>
 
-      <!-- This is a design preview, not a working submission form.
-           Replace the complete placeholder with Zoho's embed code. -->
+      <!-- SUBMIT BUTTON -->
 
       <button type="button" class="submit-btn"
               onclick="alert('Please connect your Zoho Forms embed code before accepting client submissions.')">
@@ -440,10 +456,86 @@
 </div>
 
 <footer>
-  © 2026 Your Company. All Rights Reserved.
+  © <span id="footer-year"></span> Your Company. All Rights Reserved.
   <br>
   Income Tax Filing Assistance
 </footer>
+
+<!-- AUTOMATIC ASSESSMENT YEAR GENERATOR -->
+
+<script>
+
+  function generateAssessmentYears() {
+
+    const select = document.getElementById("assessment_year");
+
+    // Get current date
+    const today = new Date();
+
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth();
+
+    // Indian Financial Year starts on 1 April.
+    // January, February and March belong to the previous FY.
+    const financialYearStart =
+      currentMonth >= 3 ? currentYear : currentYear - 1;
+
+    // Assessment Year starts one year after Financial Year
+    const currentAssessmentYear = financialYearStart + 1;
+
+    // Clear existing options
+    select.innerHTML = "";
+
+    // Default placeholder
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Select Assessment Year";
+    select.appendChild(placeholder);
+
+    // Generate latest and previous 10 Assessment Years
+    for (let i = 0; i <= 10; i++) {
+
+      const startYear = currentAssessmentYear - i;
+      const endYear = startYear + 1;
+
+      const assessmentYear =
+        startYear + "-" + String(endYear).slice(-2);
+
+      const option = document.createElement("option");
+
+      option.value = assessmentYear;
+      option.textContent = assessmentYear;
+
+      // Automatically select latest Assessment Year
+      if (i === 0) {
+        option.selected = true;
+      }
+
+      select.appendChild(option);
+    }
+
+    // Add Other / Previous Year option
+    const otherOption = document.createElement("option");
+
+    otherOption.value = "Other / Previous Year";
+    otherOption.textContent = "Other / Previous Year";
+
+    select.appendChild(otherOption);
+
+  }
+
+  // Generate Assessment Years when page loads
+  document.addEventListener("DOMContentLoaded", function() {
+
+    generateAssessmentYears();
+
+    // Automatically update copyright year
+    document.getElementById("footer-year").textContent =
+      new Date().getFullYear();
+
+  });
+
+</script>
 
 </body>
 </html>
